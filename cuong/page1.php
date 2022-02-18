@@ -10,16 +10,10 @@
     <form action="page2.php" method="post">
         Nhập tên:
         <input type="text" name="ten"> <br>
-        Ngày tháng năm sinh: 
-        <input type="date" name="ngaysinh"> <br>
-        Giới tính:
-        <input type="radio" name="sex" id="" value="Nam" > Nam 
-        <input type="radio" name="sex" id="" value="Nu"> Nữ
-        <input type="radio" name="sex" id="" value="Khac"> Khác<br>
         Email:
         <input type="email" name="email" id=""> <br>
-        Nhập mật khẩu:
-        <input type="password" name="password" id=""> <br>
+        Link:
+        <input type="text" name="link" id=""> <br>
         <input type="submit" value="Gửi">
     </form>
 </body>
