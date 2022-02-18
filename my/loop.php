@@ -7,14 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" action="showme.php">
-        nhap ten
-        <input type="text" name="name">
-        <br>
-        nhap email
-        <input type="text" name="email">
-        <br>
-        <button>Send</button>
-    </form>
+    <?php
+    $count = 5;
+    for($i=1;$i<=$count;$i++){
+      echo"<h$i> xin chao $i<h$i>";
+    }
+    ?>
 </body>
 </html>

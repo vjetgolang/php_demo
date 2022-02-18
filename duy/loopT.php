@@ -7,14 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" action="showme.php">
-        nhap ten
-        <input type="text" name="name">
-        <br>
-        nhap email
-        <input type="text" name="email">
-        <br>
-        <button>Send</button>
-    </form>
+    <?php
+        for($i = 0; $i < 5; $i++) {
+            echo "Hi ban lan $i <br>";
+        }
+    ?>
 </body>
 </html>

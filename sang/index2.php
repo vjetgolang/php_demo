@@ -7,14 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" action="showme.php">
-        nhap ten
-        <input type="text" name="name">
-        <br>
-        nhap email
-        <input type="text" name="email">
-        <br>
-        <button>Send</button>
-    </form>
+    <?php
+    $name=$_GET['name'];
+    $mail=$_GET['email'];
+    $user=$_GET['user'];
+    $password=$_GET['pass'];
+    echo"......";
+    ?>
 </body>
 </html>

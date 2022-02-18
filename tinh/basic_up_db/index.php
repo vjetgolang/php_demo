@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body bgcolor="lightgrey">
     <form method="post" action="showme.php">
-        nhap ten
-        <input type="text" name="name">
-        <br>
-        nhap email
-        <input type="text" name="email">
-        <br>
+        Enter name
+        <input type="text" name="name"><br>   
+        Enter gmail
+        <input type="text" name="email"><br>
+        Enter password
+        <input type="password" name="password"><br>
+        Enter image link
+        <input type="text" name ="image"><br>
         <button>Send</button>
     </form>
 </body>
