@@ -20,7 +20,7 @@
         <input type="date" name="birthday">
         <br>
         Email
-        <input type="mail" name="email">
+        <input type="email" name="email">
         <br>
         Password
         <input type="password" name ="pass">
