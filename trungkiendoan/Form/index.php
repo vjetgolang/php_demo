@@ -7,13 +7,15 @@
     <title>Begin to learn PHP</title>
 </head>
 <body>
-        <form action="form.php" method="get">
+        <form action="form.php" method="post">
             <label for="name">Fullname</label>
             <input type="text" name="fullname"> <br>
             <label for="email">Email</label>
             <input type="mail" name="email" id=""> <br>
             <label for="password">Password</label>
-            <input type="password" name="password">
+            <input type="password" name="password"> <br>
+            <label for="image">File</label>
+            <input type="text" name="file">
             <br>
             <button>Submit</button>
         </form>
