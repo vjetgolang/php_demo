@@ -8,13 +8,16 @@
 </head>
 <body>
     <form method="post" action="showme.php">
-        nhap ten
+        Enter Name
         <input type="text" name="name">
-        <br>
-        nhap email
+        <br>   
+        Enter Email
         <input type="text" name="email">
         <br>
-        <button>Send</button>
+        Enter Image
+        <input type="text" name ="image"> 
+        <br>
+        <button>send</button>
     </form>
 </body>
 </html>
