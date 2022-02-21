@@ -7,17 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" action="showme.php">
-        Enter Name
-        <input type="text" name="name">
-        <br>   
-        Enter Email
-        <input type="text" name="email">
+    <form action="connectsql.php" method="post">
+        nhap ten:
+        <input type="text" name="name" id="">
         <br>
-        Enter Image
-        <input type="text" name ="image"> 
+        nhap mail:
+        <input type="email" name="mail" id="">
         <br>
-        <button>send</button>
+        chon anh:
+        <input type="text" name="link" id="">
+        <br>
+        <button>Hoan thanh</button>
     </form>
 </body>
 </html>
