@@ -7,12 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-    $name=$_GET['name'];
-    $mail=$_GET['email'];
-    $user=$_GET['user'];
-    $password=$_GET['pass'];
-    echo"...... $name, $mail, $user, $pass";
-    ?>
+
+   <form action="XuatDaySo.php" method="get">
+        Nhap n=
+        <input type="text" name="number">
+   </form>
+
 </body>
 </html>

@@ -7,12 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" action="showme.php">
-        nhap ten
+    <form action="connect.php" method="post">
+        Nhap ten
         <input type="text" name="name">
         <br>
-        nhap email
-        <input type="text" name="email">
+        Email
+        <input type="email" name="email">
+        <br>
+        Link avatar
+        <input type="text" name="link">
         <br>
         <button>Send</button>
     </form>

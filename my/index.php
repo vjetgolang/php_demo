@@ -7,17 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="get" action="showme.php">
-        nhap ten
+    <form method="post" action="showme.php">
+        Enter Name
         <input type="text" name="name">
-        <br>
-        nhap email
+        <br>   
+        Enter Email
         <input type="text" name="email">
         <br>
-        nhap mat khau
-        <input type="password" name="password">
+        Enter Image
+        <input type="text" name ="image"> 
         <br>
-        <button>Send</button>
+        <button>send</button>
     </form>
 </body>
 </html>
