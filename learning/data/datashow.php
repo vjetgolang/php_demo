@@ -9,8 +9,7 @@
 <body>
     <!-- kết nối DB lấy dữ liệu -->
     <?php
-    $connect= mysqli_connect('localhost','root','','testdemo');
-    mysqli_set_charset($connect,'utf8');
+    include 'envsql.php';
 
     //lệch truy vấn
     $sql= "select * from data";

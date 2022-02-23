@@ -9,8 +9,7 @@
 <body>
     <?php
     $ma= $_GET['id'];
-    $connect= mysqli_connect('localhost','root','','testdemo');
-    mysqli_set_charset($connect,'utf8');
+    include 'envsql.php';
     $sql= "select * from data where id=$ma";
     $data= mysqli_query($connect,$sql);
     $doan= mysqli_fetch_array($data);
