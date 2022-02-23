@@ -8,13 +8,17 @@
 </head>
 <body>
     <form action="page2.php" method="post">
-        Nhập tên:
+        Tên:        
         <input type="text" name="ten"> <br>
+        Id fb:
+        <input type="text" name="idfb" placeholder="vd: MetaVietnam"> <br>
         Email:
-        <input type="email" name="email" id=""> <br>
-        Link:
-        <input type="text" name="link" id=""> <br>
-        <input type="submit" value="Gửi">
+        <input type="email" name="email"> <br>
+        Link ảnh:
+        <input type="text" name="link"> <br>
+        Idol:
+        <input type="text" name="idol"> <br>
+        <input type="submit" value="Let's go">
     </form>
 </body>
 </html>
