@@ -12,7 +12,7 @@
     $mail=$_GET['email'];
     $user=$_GET['user'];
     $password=$_GET['pass'];
-    echo"......";
+    echo"...... $name, $mail, $user, $pass";
     ?>
 </body>
 </html>
