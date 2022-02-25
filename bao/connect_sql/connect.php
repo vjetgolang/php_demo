@@ -12,6 +12,6 @@ values('$name', '$email', '$link')";
 mysqli_query($connect,$sql);
 
 echo("Thanh cong <br> $name <br> $email <br>");
-echo'<img src="'.$link.'" alt="">'
+echo'<img src="'.$link.'" alt=""> <br>';
 
 ?>
