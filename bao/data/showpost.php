@@ -9,8 +9,7 @@
 <body>
     <?php
     $maso = $_GET['ID'];
-    $connect = mysqli_connect('localhost', 'root', '', 'qlkh');
-    mysqli_set_charset($connect, 'utf8');
+    include 'env.php';
     $sql = "select * from thongtin where ID = $maso";
     $data = mysqli_query($connect, $sql);
     $p = mysqli_fetch_array($data);

@@ -8,9 +8,7 @@
 </head>
 <body>
     <?php
-    $connect = mysqli_connect('localhost', 'root', '', 'qlkh');
-
-    mysqli_set_charset($connect, 'utf8');
+    include 'env.php';
 
     $sql = "select * from thongtin";
 
@@ -20,12 +18,13 @@
     
     ?>
 
-    <table boder="1">
+    <table border="1">
         <tr>
             <td>STT</td>
             <td>Name</td>
             <td>Email</td>
             <td>link</td>
+            <td>Hanh dong</td>
         </tr>
 
         <?php foreach ($data as $value) { ?>
@@ -34,6 +33,7 @@
                 <td><a href="showpost.php?ID=<?php echo $value['ID'] ?>"><?php echo $value['Name'] ?></a></td>
                 <td><?php echo $value['Email'] ?></td>
                 <td><img src="<?php echo $value['Link'] ?>" alt="" width=100px></td>
+                <td><a href="showupdate.php?ID=<?php echo $value['ID'] ?>">Update</a></td>
             </tr>
 
         <?php } ?>
