@@ -19,5 +19,6 @@
     <h1><?php echo $p['Email']?></h1>
     <img src="<?php echo $p['Link']?>" alt="" width=100px>
     <?php mysqli_close($connect) ?>
+    
 </body>
 </html>
