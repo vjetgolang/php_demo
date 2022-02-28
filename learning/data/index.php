@@ -9,16 +9,33 @@
 <body>
     <!-- kết nối DB lấy dữ liệu -->
     <?php
+    $trang=1;
     $timkiem='';
+    if(isset($_GET['trang'])){
+        $trang= $_GET['trang'];
+    }
     include 'envsql.php';
     if(isset($_GET['searching'])){
         $timkiem= $_GET['searching'];
     }
+    $sql_sodulieu= "SELECT count(*) FROM data";
+    $result_sodulieu= mysqli_query($connect,$sql_sodulieu);
+    $row_sodulieu= mysqli_fetch_array($result_sodulieu);
+    $dulieudemduoc= $row_sodulieu['count(*)'];
+
+
+    $so_baiviettren1trang= 2;
+    $sotrang= ceil($dulieudemduoc/$so_baiviettren1trang);
+    $boqua= ($trang-1)*$so_baiviettren1trang;
+
+
     // else{
     //     //lệch truy vấn
     //     $sql= "select * from data";
     // }
-    $sql= "select * from data where tittle like '%$timkiem%'";
+    $sql= "select * from data where tittle like '%$timkiem%'
+    limit $so_baiviettren1trang offset $boqua";
+
 
     //dữ liệu trả về theo truy vấn
     $data= mysqli_query($connect,$sql);
@@ -52,5 +69,8 @@
         <?php } ?>
         
     </table>
+    <?php for($i=1;$i<=$sotrang;$i++) { ?>
+        <a href="?trang=<?php echo $i?>"><?php echo $i ?></a>
+    <?php } ?>
 </body>
 </html>
