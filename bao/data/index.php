@@ -5,20 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        a {
+            text-decoration: none;
+            color: red;
+        }
+    </style>
 </head>
 <body>
+    
     <?php
+    $search_name='';
     include 'env.php';
+    //
+    if(isset($_GET['searching'])) {
+        $search_name = $_GET['searching'];
+    }
 
-    $sql = "select * from thongtin";
+
+
+    $sql="SELECT * FROM thongtin WHERE Name LIKE '%$search_name%'";
 
     $data = mysqli_query($connect, $sql);
     
 
     
     ?>
+    <button><a href="add_member.php">Them</a></button>
+    
 
     <table border="1">
+        <caption>
+            <form action="">
+                Nhap ten can tim:   
+                <input type="search" name="searching" value ="<?php echo $search_name?>">
+            </form>
+        </caption>
         <tr>
             <td>STT</td>
             <td>Name</td>
@@ -33,12 +66,15 @@
                 <td><a href="showpost.php?ID=<?php echo $value['ID'] ?>"><?php echo $value['Name'] ?></a></td>
                 <td><?php echo $value['Email'] ?></td>
                 <td><img src="<?php echo $value['Link'] ?>" alt="" width=100px></td>
-                <td><a href="showupdate.php?ID=<?php echo $value['ID'] ?>">Update</a></td>
+                <td>
+                    <a href="showupdate.php?ID=<?php echo $value['ID'] ?>">Update</a>
+                    <br>
+                    <br>
+                    <a href="delete.php?ID=<?php echo $value['ID'] ?>">Delete</a>
+                </td>
             </tr>
 
         <?php } ?>
-
-        
 
     </table>
 
