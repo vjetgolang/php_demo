@@ -18,7 +18,7 @@
     if(isset($_GET['searching'])){
         $timkiem= $_GET['searching'];
     }
-    $sql_sodulieu= "SELECT count(*) FROM data";
+    $sql_sodulieu= "SELECT count(*) FROM data where tittle like '%$timkiem%'";
     $result_sodulieu= mysqli_query($connect,$sql_sodulieu);
     $row_sodulieu= mysqli_fetch_array($result_sodulieu);
     $dulieudemduoc= $row_sodulieu['count(*)'];
@@ -70,7 +70,7 @@
         
     </table>
     <?php for($i=1;$i<=$sotrang;$i++) { ?>
-        <a href="?trang=<?php echo $i?>"><?php echo $i ?></a>
+        <a href="?trang=<?php echo $i?>&searching=<?php echo $timkiem?>"><?php echo $i ?></a>
     <?php } ?>
 </body>
 </html>
