@@ -26,16 +26,35 @@
 <body>
     
     <?php
+    
+    if(isset($_GET['trang'])) {
+        $trang = $_GET['trang'];
+    }
+    
+
+
     $search_name='';
     include 'env.php';
-    //
+    //so trang 
+    $trang=1;
+    $sql_dulieu = "select count(*) from thongtin";
+    $result_dulieu = mysqli_query($connect,$sql_dulieu);
+    $row_dulieu= mysqli_fetch_array($result_dulieu);
+    $dulieudemduoc = $row_dulieu['count(*)'];
+
+    $baiviet1trang = 2;
+    $sotrang= ceil($dulieudemduoc/$baiviet1trang);
+    $skip= ($trang-1)*$baiviet1trang;
+    
+    //tim kiem trong name 
     if(isset($_GET['searching'])) {
         $search_name = $_GET['searching'];
     }
 
 
 
-    $sql="SELECT * FROM thongtin WHERE Name LIKE '%$search_name%'";
+    $sql="SELECT * FROM thongtin WHERE Name LIKE '%$search_name%'
+    limit $baiviet1trang offset $skip";
 
     $data = mysqli_query($connect, $sql);
     
@@ -77,6 +96,10 @@
         <?php } ?>
 
     </table>
+    <?php for($i=1;$i<= $sotrang;$i++){?>
+        <a href="?trang=<?php echo $i?>"><?php echo $i?></a>
+    <?php }?>
+    
 
     
 </body>
