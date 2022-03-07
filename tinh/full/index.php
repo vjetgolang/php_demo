@@ -18,7 +18,7 @@
     }
 
     //Query counting data (Lệnh truy vấn đếm số lượng data trong bảng)
-    $query = "select count(*) from person";
+    $query = "select count(*) from product";
     //Make a query on DB and save in result_counted(Thực hiện truy vấn vào DB và lưu vào result_counted)
     $result_counted = mysqli_query($connect,$query);
     //Returns the result of the query as an array and stores it in row(Trả về kết quả của truy vấn dưới dạng mảng và lưu vào row()
@@ -27,7 +27,7 @@
     $amount_of_data = $row['count(*)'];
 
     //Number of post in one page(Số bài viết trên một trang)
-    $amount_of_post_per_page= 2;
+    $amount_of_post_per_page= 4;
     //Calculate number of pages = amount of data / number of posts per page(Tính số lượng trang = số lượng data / số bài viết trên một trang)
     $number_of_page= ceil($amount_of_data/$amount_of_post_per_page);
     //Remove some posts when they've been added to the page(Loại một số bài viết khi bài viết đó đã được thêm vào trang) 
@@ -39,7 +39,7 @@
         $search = $_GET['search_box'];
     }
 
-    $sql = "select * from person where name like '%$search%' limit $amount_of_post_per_page offset $skip";
+    $sql = "select * from product where name like '%$search%' limit $amount_of_post_per_page offset $skip";
 
     $data = mysqli_query($connect,$sql);
 
@@ -49,18 +49,18 @@
         <tr>
             <td>ID</td>
             <td>Name</td>
-            <td>Email</td>
-            <td>Password</td>
-            <td>Image</td>
+            <td>Unit</td>
+            <td>Price</td>
+            <td>Inventory</td>
         </tr>
         
         <?php foreach ($data as $value) { ?>
             <tr>
                 <td><?php echo $value['id']?></td>
                 <td><a href="show_info.php?id=<?php echo $value['id']?>"><?php echo $value['name']?></a></td>
-                <td><?php echo $value['email']?></td>
-                <td><?php echo $value['password']?></td>
-                <td><img src="<?php echo $value['image']?>" alt="" width= 100px></td>
+                <td><?php echo $value['unit']?></td>
+                <td><?php echo $value['price']?></td>
+                <td><?php echo $value['inventory']?></td>
                 <td>
                     <a href="update_form.php?id=<?php echo $value['id']?>">Update</a>
                 </td>
@@ -83,7 +83,7 @@
     <a href="add_data.php"><b>Add one row</b></a><br>
 
     <?php for($i=1;$i<=$number_of_page;$i++) { ?>
-        <a href="?pages=<?php echo $i?>"><?php echo $i ?></a>
+        <a href="?pages=<?php echo $i?>&searching=<?php echo $search?>"><?php echo $i ?></a>
     <?php } ?>
 
 </body>

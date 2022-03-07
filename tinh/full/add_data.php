@@ -7,17 +7,18 @@
     <title>Document</title>
 </head>
 <body>
+    <a href='index.php'>Back</a><br>
     <form action="inserting_process.php" method="post">
         Name
         <input type="text" name="name">
         <br>
-        Email
-        <input type="text" name= "email">
+        Unit
+        <input type="text" name= "unit">
         <br>
-        Password
-        <input type="password" name="password"><br>
-        Image
-        <input type="text" name="image">
+        Price
+        <input type="text" name="price"><br>
+        Inventory
+        <input type="text" name="inventory">
         <button>Send</button>
     </form>
 </body>
