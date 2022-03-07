@@ -10,7 +10,7 @@
     <?php
     $ma= $_GET['id'];
     require 'connect_sql.php';
-    $sql= "select * from person where id=$ma";
+    $sql= "select * from product where id=$ma";
     $data= mysqli_query($connect,$sql);
     $row= mysqli_fetch_array($data);
 
@@ -21,13 +21,13 @@
         Name
         <input type="text" name="name" value="<?php echo $row['name']?>">
         <br>
-        Email
-        <input type="text" name= "email" value="<?php echo $row['email']?>">
+        Unit
+        <input type="text" name= "unit" value="<?php echo $row['unit']?>">
         <br>
-        Password
-        <input type="password" name="password" value="<?php echo $row['password']?>">
-        Image
-        <input type="text" name="image" value="<?php echo $row['image']?>">
+        Price
+        <input type="text" name="price" value="<?php echo $row['price']?>">
+        Inventory
+        <input type="text" name="inventory" value="<?php echo $row['inventory']?>">
         <button>Send</button>
     </form>
 </body>
