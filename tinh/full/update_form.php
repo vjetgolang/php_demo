@@ -13,8 +13,6 @@
     $sql= "select * from product where id=$ma";
     $data= mysqli_query($connect,$sql);
     $row= mysqli_fetch_array($data);
-
-    
     ?>
 <form action="updating_process.php" method="post">
     <input type="hidden" name="id" value="<?php echo $row['id']?>">

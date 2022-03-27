@@ -1,5 +1,6 @@
 <a href='index.php'>Back</a><br>
 <?php
+
     $id = $_GET['id'];
     require 'connect_sql.php';
     $sql = "delete from product where id = $id";
