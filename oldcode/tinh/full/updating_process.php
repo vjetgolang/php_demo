@@ -7,19 +7,21 @@
     <title>Document</title>
 </head>
 <body>
+    <a href='index.php'>Back</a><br>
+
     <?php
-    $ma= $_POST['id'];
+    $id= $_POST['id'];
     $name= $_POST['name'];
-    $email= $_POST['email'];
-    $password= $_POST['password'];
-    $image= $_POST['image'];
+    $unit= $_POST['unit'];
+    $price= $_POST['price'];
+    $inventory= $_POST['inventory'];
     require 'connect_sql.php';
-    $sql= "update person set name='$name',email='$email',password='$password',image='$image' where id=$ma";
+    $sql= "update product set name='$name',unit='$unit',price='$price',inventory='$inventory' where id=$id";
     $data= mysqli_query($connect,$sql);
     mysqli_close($connect);
     ?>
     <?php
-    echo "$ma<br>$name<br>$email<br>$password<br>$image";
+    echo "Update successful";
     
     ?>
 </body>
