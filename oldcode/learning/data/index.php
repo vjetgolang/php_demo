@@ -63,6 +63,7 @@
                 <td><?php echo $value['des']?></td>
                 <td><img src="<?php echo $value['link']?>" alt="" width= 100px></td>
                 <td>
+                <a href="showupdate.php?id=<?php echo $value['id']?>">update</a>
                     <a href="delete.php?id=<?php echo $value['id']?>">Delete</a>
                 </td>
             </tr>
