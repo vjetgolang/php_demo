@@ -12,7 +12,13 @@
     xet don hang
     <?php
     require '../connect.php';
-    $sql = "SELECT * FROM product";
+    // select data from table
+    //$sql = "SELECT * FROM product";
+    //select data from table with condition from 2 table
+    $sql = "SELECT product.*, info.ten
+    FROM product
+    JOIN info ON product.user_id = info.id";
+    
     $result = mysqli_query($connect,$sql);
     // $data= mysqli_fetch_array($result);
     ?>
@@ -27,6 +33,7 @@
             <td>ten</td>
             <td>gia</td>
             <td>hinh anh</td>
+            <td>Nguoi khoi tao</td>
             <td>sua</td>
             <td>xoa</td>
         </tr>
@@ -36,6 +43,7 @@
             <td><?php echo $key['nameproduct'] ?></td>
             <td><?php echo $key['price'] ?></td>
             <td><img src="<?php echo $key['photo']?>" height="100px"/></td>
+            <td><?php echo $key['ten'] ?></td>
             <td><a href="update.php?id=<?php echo $key['id']?>">Update</a></td>
             <td><a href="delete.php?id=<?php echo $key['id']?>">Xóa</a></td>
         </tr>

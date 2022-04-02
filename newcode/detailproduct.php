@@ -6,15 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<style>
-    body{
-        margin:0;
-        padding:0;
-    }
-</style>
 <body>
     <?php require 'header.php'; ?>
-    <?php require 'productlist.php'; ?>
+    <div class="djd" style="width: 100%; height: 800px; background-color: yellow;">day la trang san pham</div>
     <?php require 'footer.php'; ?>
 </body>
 </html>
