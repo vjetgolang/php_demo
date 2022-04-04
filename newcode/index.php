@@ -13,8 +13,11 @@
     }
 </style>
 <body>
-    <?php require 'header.php'; ?>
-    <?php require 'productlist.php'; ?>
-    <?php require 'footer.php'; ?>
+    <div class="maincontainer">
+
+        <?php require 'header.php'; ?>
+        <?php require 'productlist.php'; ?>
+        <?php require 'footer.php'; ?>
+    </div>
 </body>
 </html>

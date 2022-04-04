@@ -31,6 +31,9 @@
             <div class="product-user">
                 <?php echo $key['ten'] ?>
             </div>
+            <div>
+                <a href="detailproduct.php?id=<?php echo $key['id']?>">Chi tiet</a>
+            </div>
         </div>
     </div>
 <?php } ?>
