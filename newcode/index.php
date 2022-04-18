@@ -1,5 +1,9 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +11,12 @@
     <title>Document</title>
 </head>
 <style>
-    body{
-        margin:0;
-        padding:0;
+    body {
+        margin: 0;
+        padding: 0;
     }
 </style>
+
 <body>
     <div class="maincontainer">
 
@@ -20,4 +25,5 @@
         <?php require 'footer.php'; ?>
     </div>
 </body>
+
 </html>

@@ -2,9 +2,9 @@
 
 $email = $_POST["email"];
 $password = $_POST["password"];
-if(isset($_POST["remember"])){
+if (isset($_POST["remember"])) {
     $remember = true;
-}else{
+} else {
     $remember = false;
 }
 
@@ -16,11 +16,16 @@ $row = mysqli_num_rows($result);
 
 if ($row == 1) {
     session_start();
+
     $each = mysqli_fetch_array($result);
-    $_SESSION["name"] = $each["name"];
-    $_SESSION["id"] = $each["id"];
-    if($remember){
-        setcookie("remember", $each['id'], time()+60*60*24*30);
+    $id = $each['id'];
+    $_SESSION["name"] = $each['name'];
+    $_SESSION["id"] = $id;
+    if ($remember) {
+        $token = uniqid('user_', true);
+        $sql = "update customer set token='$token' where id='$id' limit 1";
+        mysqli_query($connect, $sql);
+        setcookie("remember", $token, time() + 60 * 60 * 24 * 30);
     }
     header('location:user.php');
 } else {

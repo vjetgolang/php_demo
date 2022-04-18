@@ -1,23 +1,23 @@
 <?php
-    session_start();
-    if(isset($_SESSION['error'])){
-        echo '<script>alert("'.$_SESSION['error'].'")</script>';
-        unset($_SESSION['error']);
-    }
-    if(isset($_COOKIE['remember'])){
-        $id= $_COOKIE['remember'];
-        require 'admin/connect.php';
-        $sql = "SELECT * FROM customer WHERE id='$id'";
-        $result = mysqli_query($connect, $sql);
-        $row= mysqli_fetch_array($result);
-        $_SESSION["name"] = $row["name"];
-        $_SESSION["id"] = $row["id"];
-    }
+session_start();
+if (isset($_SESSION['error'])) {
+    echo '<script>alert("' . $_SESSION['error'] . '")</script>';
+    unset($_SESSION['error']);
+}
+if (isset($_COOKIE['remember'])) {
+    $token = $_COOKIE['remember'];
+    require 'admin/connect.php';
+    $sql = "SELECT * FROM customer WHERE token='$token' limit 1";
+    $result = mysqli_query($connect, $sql);
+    $row = mysqli_fetch_array($result);
+    $_SESSION["name"] = $row["name"];
+    $_SESSION["id"] = $row["id"];
+}
 
-    if(isset($_SESSION['id'])){
-        header('Location: index.php');
-        exit();
-    }
+if (isset($_SESSION['id'])) {
+    header('Location: index.php');
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
