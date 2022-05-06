@@ -2,6 +2,8 @@
 $name = addslashes($_POST['name']);
 $email = addslashes($_POST['email']);
 $password = addslashes($_POST['password']);
+$phone_number = addslashes($_POST['phone_number']);
+$address = addslashes($_POST['address']);
 
 require 'admin/connect.php';
 $sql = "select count(*) from customer where email='$email'";
@@ -13,8 +15,8 @@ if ($row == 1) {
     header('location:signup.php');
     exit;
 }
-$sql = "INSERT INTO customer(name,email,password)
-    VALUES ('$name','$email','$password')";
+$sql = "INSERT INTO customer(name,email,password,phone_number,address)
+    VALUES ('$name','$email','$password','$phone_number','$address')";
 mysqli_query($connect, $sql);
 
 // get id from customer
