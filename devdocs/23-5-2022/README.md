@@ -8,13 +8,13 @@ Xem thêm nhiều tài liệu tham khảo [Tại đây](https://viblo.asia/p/jav
 
 Ví dụ: Thêm trường giới tính vào bảng customer
 
-![Enum](/images/enum1.jpg "Demo enum")
+![Enum](images/enum1.jpg "Demo enum")
 
 > Trong đó, Type: Enum, Length/Values: 'giá trị 1', 'giá trị 2'.
 
 Khi đó, trường gender sẽ có kiểu như sau:
 
-![Result](/images/enum2.jpg "Kết quả trả về của enum.")
+![Result](images/enum2.jpg "Kết quả trả về của enum.")
 
 ## Tính năng login dành cho admin
 
@@ -28,7 +28,7 @@ newcode/admin/...
 Setup file .../newcode/admin/index.php như sau:
 
 
-![Setup file index.php](/images/admin2.jpg "File index.php")
+![Setup file index.php](images/admin2.jpg "File index.php")
 
 Tạo db dành cho admin:(database name: admin)
 > id: id dành cho quản lý (Int)
@@ -42,7 +42,7 @@ Tạo db dành cho admin:(database name: admin)
 > level: cấp độ (Boolean)
 
 Kết quả:
-![Tạo database](/images/admin1.jpg)
+![Tạo database](images/admin1.jpg)
 Tiến hành INSERT dữ liệu vào db admin(Mình lười nên các bạn tự tạo trang đăng ký nhé)
 
 Tạo file process_login.php cho tiến trình đăng nhập theo cây thư mục sau:
@@ -56,7 +56,7 @@ newcode/admin/...
 
 Nội dung file process_login.php:
 
-![Process login](/images/admin3.jpg "Process login")
+![Process login](images/admin3.jpg "Process login")
 
 Tính năng đăng nhập vẫn như mọi lần nhưng ở đây phải chú ý đến phần lưu lại session level với mục đích phân role.
 Trước khi phân role thì check admin bằng cách tạo file check_admin.php trong folder admin:
@@ -71,7 +71,7 @@ newcode/admin/...
 ```
 
 Nội dung file check_admin.php:
-![Check admin](/images/admin4.jpg "Check admin")
+![Check admin](images/admin4.jpg "Check admin")
 
 Để kích hoạt chức năng check admin bằng cách require file check_admin.php vào folder root:
 
@@ -84,7 +84,7 @@ newcode/admin/root/...
 
 Nội dung file index.php:
 
-![Index.php](/images/admin5.jpg "Index.php")
+![Index.php](images/admin5.jpg "Index.php")
 
 Khi người dùng cố tình trỏ route đến admin thì điều chuyển hướng về trang đăng nhập.
 
